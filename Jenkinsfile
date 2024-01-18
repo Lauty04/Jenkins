@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('stage1') {
           steps {
-            sh 'cat /etc/etc/pwd'
+            sh 'cat /etc/etc/passwd'
             sh 'echo \'ejecutado con exito\''
           }
         }
@@ -27,7 +27,7 @@ pipeline {
 
     stage('notificaciones') {
       steps {
-        sh '''curl -X POST -H "Content-Type: application/json" -d "{\\"chat_id\\": \\"5419757145\\", \\"text\\": \\"Falló la tarea $JOB_NAME!! $BUILD_NUMBER,  \\", \\"disable_notification\\": false}" https://api.telegram.org/bot6421695221:AAFvC_xdV-RTxlAuH0_Fdahu0TMLXFHkWgU/sendMessage
+        sh '''curl -X POST -H "Content-Type: application/json" -d "{\\"chat_id\\": \\"5419757145\\", \\"text\\": \\"FallÃ³ la tarea $JOB_NAME!! $BUILD_NUMBER,  \\", \\"disable_notification\\": false}" https://api.telegram.org/bot6421695221:AAFvC_xdV-RTxlAuH0_Fdahu0TMLXFHkWgU/sendMessage
 
 '''
       }
