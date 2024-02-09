@@ -4,11 +4,13 @@ pipeline {
     stages {
         stage('Clonar Repositorio con pipelines') {
             steps {
-                // Paso para clonar el repositorio de GitHub
-                git https://github.com/Lauty04/WEBapache.git
+                script {
+                    // Paso para clonar el repositorio de GitHub
+                    git branch: 'main', url: 'https://github.com/Lauty04/WEBapache.git'
+                }
             }
         }
 
-        
+        // Agrega más etapas según sea necesario
     }
 }
